@@ -18,14 +18,17 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="sessionDc">
             <column width="350px">
-                <column width="250px">
-                    <textField id="topicField" property="topic"/>
-                    <pickerField id="speakerField" property="speaker"/>
-                    <dateField id="startDateField" property="startDate"/>
-                    <textField id="durationField" property="duration"/>
-                    <textArea id="descriptionField" property="description"/>
-                    <dateField id="endDateField" property="endDate"/>
-                </column>
+                <textField id="topicField" property="topic"/>
+                <dateField id="startDateField" property="startDate"/>
+                <textField id="durationField" property="duration"/>
+                <pickerField id="speakerField" property="speaker">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <textArea id="descriptionField" property="description" rows="5"/>
+                <dateField id="endDateField" property="endDate" caption="Конец доклада"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
