@@ -28,7 +28,7 @@
                     </actions>
                 </pickerField>
                 <textArea id="descriptionField" property="description" rows="5"/>
-                <dateField id="endDateField" property="endDate" caption="Конец доклада"/>
+                <dateField id="endDateField" property="endDate" caption="msg://endDateField"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
