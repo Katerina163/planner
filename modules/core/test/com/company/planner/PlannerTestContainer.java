@@ -3,7 +3,6 @@ package com.company.planner;
 import com.haulmont.cuba.testsupport.TestContainer;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PlannerTestContainer extends TestContainer {
@@ -11,10 +10,9 @@ public class PlannerTestContainer extends TestContainer {
     public PlannerTestContainer() {
         super();
         //noinspection ArraysAsListWithZeroOrOneArgument
-        appComponents = new ArrayList<>(Arrays.asList(
-                // list add-ons here: "com.haulmont.reports", "com.haulmont.addon.bproc", etc.
-                "com.haulmont.cuba"
-        ));
+        appComponents = Arrays.asList(
+                "com.haulmont.cuba",
+                "com.haulmont.addon.helium");
         appPropertiesFiles = Arrays.asList(
                 // List the files defined in your web.xml
                 // in appPropertiesConfig context parameter of the core module
@@ -25,8 +23,6 @@ public class PlannerTestContainer extends TestContainer {
                 "com/company/planner/test-app.properties");
         autoConfigureDataSource();
     }
-
-    
 
     public static class Common extends PlannerTestContainer {
 
@@ -45,7 +41,6 @@ public class PlannerTestContainer extends TestContainer {
             }
             setupContext();
         }
-        
 
         @SuppressWarnings("RedundantThrows")
         @Override
@@ -53,6 +48,6 @@ public class PlannerTestContainer extends TestContainer {
             cleanupContext();
             // never stops - do not call super
         }
-        
+
     }
 }
