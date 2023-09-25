@@ -30,7 +30,9 @@
                 caption="mainMsg://filter"
                 applyTo="sessionsTable"
                 dataLoader="sessionsDl">
-            <properties include=".*"/>
+            <properties include=".*"
+                        exclude="id"
+                        excludeProperties="version,createTs,createdBy,deleteTs,deletedBy,updatedBy,updateTs"/>
         </filter>
         <tabSheet id="sessionsTab">
             <tab id="calendarTab" caption="msg://calendarTab.caption" margin="true,false,false,false" spacing="true"
