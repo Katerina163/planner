@@ -27,12 +27,12 @@
     <layout
             spacing="true" expand="sessionsTab">
         <filter id="filter"
-                caption="mainMsg://filter"
                 applyTo="sessionsTable"
                 dataLoader="sessionsDl">
             <properties include=".*"
                         exclude="id"
-                        excludeProperties="version,createTs,createdBy,deleteTs,deletedBy,updatedBy,updateTs"/>
+                        excludeProperties="version,createTs,createdBy,deleteTs,deletedBy,updatedBy,updateTs"
+                        excludeRecursively="true"/>
         </filter>
         <tabSheet id="sessionsTab">
             <tab id="calendarTab" caption="msg://calendarTab.caption" margin="true,false,false,false" spacing="true"
@@ -68,9 +68,9 @@
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
-                        <button id="createBtn" caption="mainMsg://add" action="sessionsTable.create"/>
-                        <button id="editBtn" caption="mainMsg://edit" action="sessionsTable.edit"/>
-                        <button id="removeBtn" caption="mainMsg://remove" action="sessionsTable.remove"/>
+                        <button id="createBtn" action="sessionsTable.create"/>
+                        <button id="editBtn" action="sessionsTable.edit"/>
+                        <button id="removeBtn" action="sessionsTable.remove"/>
                     </buttonsPanel>
                 </groupTable>
             </tab>

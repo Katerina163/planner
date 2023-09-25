@@ -19,11 +19,11 @@
     <layout expand="speakersTable"
             spacing="true">
         <filter id="filter"
-                caption="mainMsg://filter"
                 applyTo="speakersTable"
                 dataLoader="speakersDl">
             <properties include=".*"
-                        excludeProperties="version,createTs,createdBy,deleteTs,deletedBy,updatedBy,updateTs"/>
+                        excludeProperties="version,createTs,createdBy,deleteTs,deletedBy,updatedBy,updateTs"
+                        excludeRecursively="true"/>
         </filter>
         <groupTable id="speakersTable"
                     width="100%"
@@ -41,9 +41,9 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" caption="mainMsg://add" action="speakersTable.create"/>
-                <button id="editBtn" caption="mainMsg://edit" action="speakersTable.edit"/>
-                <button id="removeBtn" caption="mainMsg://remove" action="speakersTable.remove"/>
+                <button id="createBtn" action="speakersTable.create"/>
+                <button id="editBtn" action="speakersTable.edit"/>
+                <button id="removeBtn" action="speakersTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
